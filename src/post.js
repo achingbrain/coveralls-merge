@@ -29,7 +29,7 @@ export const post = source_files => {
                 throw new Error(`Error sending data to Coveralls: ${error}`);
             } else {
                 console.log('POST to Coveralls successful!');
-                console.log('Job URL:', JSON.parse(response.body).url);
+                console.log('Job URL:', JSON.parse(response.body));
             }
         }
     );
