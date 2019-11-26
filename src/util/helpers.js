@@ -25,7 +25,7 @@ export function padWithNull(coverallsSourceFile, number) {
 
 export function getServiceName() {
     if (process.env.TRAVIS) {
-        return 'Travis CI';
+        return 'travis-ci';
     }
 
     if (process.env.JENKINS_URL) {
