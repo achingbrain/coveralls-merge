@@ -16,7 +16,7 @@ export const post = source_files => {
             source_files,
             git: getGitInfo()
         });
-
+console.info('posting to', url)
     request.post(
         {
             url,
@@ -28,8 +28,14 @@ export const post = source_files => {
             if (error) {
                 throw new Error(`Error sending data to Coveralls: ${error}`);
             } else {
+                const body = JSON.parse(response.body)
+
+                if (body.error) {
+                    throw new Error(body.message)
+                }
+
                 console.log('POST to Coveralls successful!');
-                console.log('Job URL:', JSON.parse(response.body));
+                console.log('Job URL:', body.url);
             }
         }
     );
