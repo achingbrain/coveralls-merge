@@ -16,7 +16,7 @@ export const post = source_files => {
             source_files,
             git: getGitInfo()
         });
-console.info('posting to', url)
+console.info('posting to', url, json)
     request.post(
         {
             url,
