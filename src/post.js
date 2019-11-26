@@ -5,7 +5,7 @@ import {getGitInfo} from './util/git';
 export const post = source_files => {
     const repo_token = process.env.COVERALLS_REPO_TOKEN;
 
-    if (!repo_token) {
+    if (!repo_token && !process.env.TRAVIS) {
         throw new Error('COVERALLS_REPO_TOKEN environment variable not set');
     }
 
