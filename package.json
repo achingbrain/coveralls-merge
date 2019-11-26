@@ -9,8 +9,7 @@
     "eslint": "eslint src/** test/unit/**",
     "prepublish": "npm run verify && npm run build",
     "test": "mocha",
-    "verify": "npm run eslint && npm run test && echo Verify Passed!",
-    "postinstall": "npm run build"
+    "verify": "npm run eslint && npm run test && echo Verify Passed!"
   },
   "keywords": [
     "coveralls"
