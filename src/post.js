@@ -1,5 +1,5 @@
 import request from 'request';
-import {getServiceName} from './util/helpers';
+import {getServiceName, getServiceJobId} from './util/helpers';
 import {getGitInfo} from './util/git';
 
 export const post = source_files => {
@@ -13,6 +13,7 @@ export const post = source_files => {
         json = JSON.stringify({
             repo_token,
             service_name: getServiceName(),
+            service_job_id: getServiceJobId(),
             source_files,
             git: getGitInfo()
         });

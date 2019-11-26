@@ -50,3 +50,9 @@ export function getServiceName() {
 
     return process.env.COVERALLS_SERVICE_NAME;
 }
+
+export function getServiceJobId() {
+    if (process.env.TRAVIS_JOB_ID) {
+        return process.env.TRAVIS_JOB_ID
+    }
+}
